@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.timoteobrasil.ideotafeira.modelo.Produto;
-import br.com.timoteobrasil.ideotafeira.parser.ProdutoNovoParser;
-import br.com.timoteobrasil.ideotafeira.parser.ProdutoParser;
 import br.com.timoteobrasil.ideotafeira.repository.ProdutoRepository;
 import br.com.timoteobrasil.ideotafeira.to.ProdutoNovoTO;
 import br.com.timoteobrasil.ideotafeira.to.ProdutoTO;
