@@ -32,17 +32,9 @@ public class ProdutoController {
             .toList();
     }
 
-    @GetMapping("/nada") 
-    public Produto novoDummy() {
-        System.out.println("Entrou no /nada");
-        Produto produto = new Produto();
-        produto.setNome("Nada");
-        produto.setDescricao("Produto vazio para inicializar o banco.");
-        return produtoRepository.save(produto);
-    }
-
     @PostMapping("/novo")
     public ProdutoTO novo(@RequestBody ProdutoNovoTO produtoNovo) {
+        
         Produto produto = produtoRepository.save(modelMapper.map(produtoNovo, Produto.class));
         return modelMapper.map(produto, ProdutoTO.class);
     }

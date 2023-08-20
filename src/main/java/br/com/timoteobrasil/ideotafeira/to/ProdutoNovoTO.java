@@ -3,6 +3,8 @@ package br.com.timoteobrasil.ideotafeira.to;
 public class ProdutoNovoTO {
     private String nome;
     private String descricao;
+    private Long categoriaId;
+
     public String getNome() {
         return nome;
     }
@@ -15,8 +17,14 @@ public class ProdutoNovoTO {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    public Long getCategoriaId() {
+        return categoriaId;
+    }
+    public void setCategoriaId(Long categoriaId) {
+        this.categoriaId = categoriaId;
+    }
     @Override
     public String toString() {
-        return "ProdutoNovoTO [nome=" + nome + ", descricao=" + descricao + "]";
+        return "ProdutoNovoTO [nome=" + nome + ", descricao=" + descricao + ", categoriaId=" + categoriaId + "]";
     }
 }

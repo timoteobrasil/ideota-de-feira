@@ -4,6 +4,8 @@ public class ProdutoTO {
     private Long id;
     private String nome;
     private String descricao;
+    private String categoriaNome;
+
     public Long getId() {
         return id;
     }
@@ -22,8 +24,15 @@ public class ProdutoTO {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    public String getCategoriaNome() {
+        return categoriaNome;
+    }
+    public void setCategoriaNome(String categoriaNome) {
+        this.categoriaNome = categoriaNome;
+    }
     @Override
     public String toString() {
-        return "ProdutoTO [id=" + id + ", nome=" + nome + ", descricao=" + descricao + "]";
+        return "ProdutoTO [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", categoriaNome="
+                + categoriaNome + "]";
     }
 }
