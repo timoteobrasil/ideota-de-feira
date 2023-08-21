@@ -19,7 +19,8 @@ Lista de compras simples que pode evoluir no futuro. Ainda tenho expectativa de 
 ### Iniciadas
 
 * CRUD de produtos (CR e relacionamento com categorias)
-* CRUD de categorias
+* CRUD de categorias (CRUD rústico ok).
+    * Atualmente, o método de alterar está criando categorias novas se eu passar um ID que não está no banco. Cuidar disso quando estiver lidando com os erros.
 
 ### Concluídas
 
@@ -30,6 +31,8 @@ Lista de compras simples que pode evoluir no futuro. Ainda tenho expectativa de 
 * Histórico de preços
 * Lista de compras
     * Estimativa de valor das compras
+* Tratamento de erros decente
+* Testes unitários 😩
 * Acompanhamento de consumo
 * Sugestão de itens para a lista de compras
 * Procurar alguma api gratuita de comparação de preços e tentar usar
