@@ -18,7 +18,8 @@ Lista de compras simples que pode evoluir no futuro. Ainda tenho expectativa de 
 
 ### Iniciadas
 
-* CRUD de produtos (CR e relacionamento com categorias)
+* CRUD de produtos (CRD e relacionamento com categorias)
+    * Update está cagado. O ModelMapper está jogando o id da categoria no id do produto.
 * CRUD de categorias (CRUD rústico ok).
     * Atualmente, o método de alterar está criando categorias novas se eu passar um ID que não está no banco. Cuidar disso quando estiver lidando com os erros.
 
