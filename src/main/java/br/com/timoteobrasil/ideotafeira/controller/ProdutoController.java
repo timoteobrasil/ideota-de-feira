@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.timoteobrasil.ideotafeira.modelo.Categoria;
+import br.com.timoteobrasil.ideotafeira.modelo.Etiqueta;
 import br.com.timoteobrasil.ideotafeira.modelo.Produto;
 import br.com.timoteobrasil.ideotafeira.repository.CategoriaRepository;
+import br.com.timoteobrasil.ideotafeira.repository.EtiquetaRepository;
 import br.com.timoteobrasil.ideotafeira.repository.ProdutoRepository;
 import br.com.timoteobrasil.ideotafeira.to.ProdutoNovoTO;
 import br.com.timoteobrasil.ideotafeira.to.ProdutoTO;
@@ -30,6 +32,9 @@ public class ProdutoController {
 
     @Autowired
     private CategoriaRepository categoriaRepository;
+
+    @Autowired
+    private EtiquetaRepository etiquetaRepository;
 
     @Autowired
     ModelMapper modelMapper;
@@ -71,5 +76,18 @@ public class ProdutoController {
         if(produto.isPresent()) {
             produtoRepository.delete(produto.get());
         }
+    }
+
+    @PutMapping("/produto/etiquetas")
+    public ProdutoTO alterarEtiquetas(@RequestParam(name = "id_produto") Long idProduto, @RequestBody List<Long> idsEtiquetas) {
+        List<Etiqueta> etiquetas = etiquetaRepository.findAllById(idsEtiquetas);
+        Optional<Produto> produto = produtoRepository.findById(idProduto);
+        if(produto.isPresent()) {
+            Produto produtoConcreto = produto.get();
+            produtoConcreto.setEtiquetas(etiquetas);
+            produtoRepository.save(produtoConcreto);
+            return modelMapper.map(produtoConcreto, ProdutoTO.class);
+        }
+        return null;
     }
 }

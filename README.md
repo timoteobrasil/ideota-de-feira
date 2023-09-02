@@ -18,16 +18,16 @@ Lista de compras simples que pode evoluir no futuro. Ainda tenho expectativa de 
 
 ### Iniciadas
 
-* CRUD de produtos (CRD e relacionamento com categorias)
-    * Update está cagado. O ModelMapper está jogando o id da categoria no id do produto.
-* CRUD de categorias (CRUD rústico ok).
+* CRUD de produtos (CRUD rústico OK).
+* CRUD de categorias (CRUD rústico OK).
     * Atualmente, o método de alterar está criando categorias novas se eu passar um ID que não está no banco. Cuidar disso quando estiver lidando com os erros.
+* Criação e listagem de tags (falta RUD).
+    * Associação de tags e produtos, mas o mapper não está mostrando o relacionamento.
 
 ### Concluídas
 
 ## Features Pretendidas
 
-* CRUD de tags
 * CRUD de marcas
 * Histórico de preços
 * Lista de compras
